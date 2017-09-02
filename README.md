@@ -24,7 +24,7 @@ Learning notes and study links for each topic will (hopefully) be updated as oft
 
 Here is a list of topics covered so far:
 
-- [ES6/ES2016](../es6)
+- [React](react)
 
 
 ### General Readings
@@ -58,4 +58,4 @@ Reach out to me at [galiarmero.io@gmail.com](galiarmero.io@gmail.com) or [![Twit
 
 ## License
 
-[MIT](../LICENSE) © Gali Armero.
+[MIT](LICENSE) © Gali Armero.

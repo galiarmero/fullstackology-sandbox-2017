@@ -9,9 +9,12 @@ The boilerplate code is cloned from [ReduxSimpleStarter](https://github.com/Step
 - [What the project does](#what-the-project-does)
 - [Installation](#installation)
 - [Some Learnings](#some-learnings)
-    - [Babel](#babel)
-    - [React Components](#react-components)
-    - [JSX](#jsx)
+    - [Redux](#redux)
+    - [Reducer](#reducer)
+    - [Action](#action)
+    - [Action Creator](#action-creator)
+    - [Dispatch](#dispatch)
+    - [React-Redux](#react-redux)
 
 ## What the project does
 
@@ -53,5 +56,7 @@ Propagates an action to all reducers. Reducers will then decide the value of the
 
 ### React-Redux
 
-A library whose sole purpose is to connect Redux with the React application.
+A library whose sole purpose is to connect Redux with the React application. 
+
+
 

@@ -11,7 +11,6 @@ export default class SearchBar extends Component {
 
     onInputChange(event) {
         this.setState({ term: event.target.value });
-        console.log(event.target.value)
     }
 
     onFormSubmit(event) {
@@ -22,7 +21,6 @@ export default class SearchBar extends Component {
         return (
             <form className="input-group" onSubmit={this.onFormSubmit}>
                 <input
-                    type="text"
                     placeholder="Get a five-day forecast in your favorite cities"
                     className="form-control"
                     value={this.state.term}

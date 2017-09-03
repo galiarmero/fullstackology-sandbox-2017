@@ -1,25 +1,60 @@
-# ReduxSimpleStarter
+# weather-app
 
-Interested in learning [Redux](https://www.udemy.com/react-redux/)?
+A simple weather forecasting app implementing React and Redux as shown in Section 5 of the [Modern React with Redux](https://www.udemy.com/react-redux/learn/v4/content) UDemy course by [StephenGrider](https://github.com/StephenGrider).
 
-### Getting Started
+The boilerplate code is cloned from [ReduxSimpleStarter](https://github.com/StephenGrider/ReduxSimpleStarter).
 
-There are two methods for getting started with this repo.
+## Table of Contents
 
-#### Familiar with Git?
-Checkout this repo, install dependencies, then start the gulp process with the following:
+- [What the project does](#what-the-project-does)
+- [Installation](#installation)
+- [Learnings](#learnings)
+    - [middlewares](#middlewares)
+    - [react-redux](#react-redux)
+
+
+## What the project does
+
+Projects the 5-day weather forecast for a given city using the [OpenWeatherMap API](https://openweathermap.org/api).
+
+## Installation
+Once copied, go to the home directory of this project and run:
 
 ```
-> git clone https://github.com/StephenGrider/ReduxSimpleStarter.git
-> cd ReduxSimpleStarter
 > npm install
+```
+
+To run the project:
+```
 > npm start
 ```
 
-#### Not Familiar with Git?
-Click [here](https://github.com/StephenGrider/ReactStarter/releases) then download the .zip file.  Extract the contents of the zip file, then open your terminal, change to the project directory, and:
+## Learnings
+
+### Middlewares
+
+Sort of a guard that stops an action from flowing through reducers right away. They check the action, perform some checks and operations on it and then decides when to let it proceed to the reducers.
+
+Middlewares in the application are specified during store creation in the index of the app.
 
 ```
-> npm install
-> npm start
-```
+import myMiddleware from 'my-middle-ware';
+const createStoreWithMiddleware = applyMiddleware(myMiddleware)(createStore);
+
+ReactDOM.render(
+  <Provider store={createStoreWithMiddleware(reducers)}>
+    <App />
+  </Provider>
+  , document.querySelector('.container'));
+``` 
+
+### redux-promise
+
+[redux-promise](https://www.npmjs.com/package/redux-promise) is a middleware for actions that contain [promises](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Promise).
+
+It receives an Action whose payload is a promise. It will either
+
+- dispatch a copy of the action with the resolved value of the promise if the promise is successful
+- dispatch a copy of the action with the rejected value of the promise if the promise is failed.
+
+This middleware allows us to work with pure data in reducers rather than dealing with promises.
